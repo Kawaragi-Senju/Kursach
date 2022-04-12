@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+
+<div class="container cont" >
+    <div>
+<!--        <img th:src="@{../static/images/task.png}">-->
+        <img th:src="@{images/task.png}" class="rounded  size-300" alt="dad">
+        <a th:href="@{/assignments/getAll}">
+            <h3>Поручения</h3>
+        </a>
+    </div>
+    <div>
+        <img th:src="@{images/docs.jpg}" class="rounded  size-300" alt="dad">
+        <a th:href="@{/document/viewAll}">
+            <h3>Документы</h3>
+        </a>
+    </div>
+</div>
+
+<div th:insert="~{footer :: mainPage}"></div>
+
+</body>
+</html>

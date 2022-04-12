@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Поручения</title>
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/static/js/getAssignments.js"></script>
+<script type="text/javascript" src="/static/js/newAssignment.js"></script>
+<script type="text/javascript" src="/static/js/delegateAssignment.js"></script>
+
+<span class='username'> </span> <br>
+<button type="button" class="btn btn-default" id="getAssignmentsBtn">Получить все созданные Мной поручения</button><br>
+<button type="button" class="btn btn-default" id="getDelegatedAssignmentsBtn">Получить все делегированные Мне поручения</button><br>
+<button type="button" class="btn btn-default" id="getGivenAssignmentsBtn">Получить все назначенные Мне поручения</button><br>
+<form action="/auth/logout" method="post">
+    <button type="submit">Выйти</button>
+</form>
+<h2>Создать новое поручение</h2>
+<input type="text" id="emailAssignee" title="email сотрудника">
+<input type="file" id="fileAss" title="Загрузить файлы">
+<button id="sendAssignment">Отправить</button><br>
+<h2>Все созданные мной поручения</h2>
+<table id="assignmentTable" border='1'>
+    <tr>
+        <th>ID поручения</th>
+        <th>Кто дал поручение</th>
+        <th>Кому было поручено</th>
+        <th>Статус</th>
+        <th>Делегировано?</th>
+        <th>Действия</th>
+        <th>Документ</th>
+    </tr>
+</table>
+<h2>Делегированные мне поручения</h2>
+<table id="delegatedAssignmentsToMe" border="1">
+    <tr>
+        <th>ID поручения</th>
+        <th>Кто дал поручение</th>
+        <th>Кому было поручено</th>
+        <th>Cтатус</th>
+        <th>Делегировано?</th>
+        <th>Кому переназначено</th>
+        <th>Действия</th>
+        <th>Документ</th>
+    </tr>
+</table>
+<h2>Назначенные мне поручения</h2>
+<table id="givenAssignments" border="1">
+    <tr>
+        <th>ID поручения</th>
+        <th>Кто дал поручение</th>
+        <th>Кому было поручено</th>
+        <th>Cтатус</th>
+        <th>Делегировано?</th>
+        <th>Действия</th>
+        <th>Документ</th>
+    </tr>
+</table>
+<h2>Делегировать поручения</h2>
+<input type="number" id="idAssignment" value="ID Поручения" title="ID поручения"/>
+<input type="text" id="emailNewAssignee" value="Email человека" title="Email человека"/>
+<input type="button" value="Переназначить" id="delegateTask"/>
+</body>
+</html>
